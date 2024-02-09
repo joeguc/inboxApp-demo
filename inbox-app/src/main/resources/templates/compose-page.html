@@ -86,13 +86,13 @@
             <dl class="card-body">
                 <form>
                     <div class="mb-3">
-                        <label for="toIds" class="form-label">To</label>
-                        <input type="text" class="form-control" id="toIds">
+                        <label for="toIds"  class="form-label">To</label>
+                        <input type="text" th:value="${toIds}" class="form-control" id="toIds">
                         <div id="toIdsHelp" class="form-text">Enter comma separated GitHub IDs of your recepients</div>
                     </div>
                     <div class="mb-3">
                         <label for="subject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="subject">
+                        <input type="text"  class="form-control" id="subject">
                     </div>
                     <div class="mb-3">
                         <label for="body" class="form-label">Body</label>
