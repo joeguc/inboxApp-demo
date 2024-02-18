@@ -84,7 +84,11 @@
         <div class="card" >
             <div class="card-header" >Create New Email</div>
             <dl class="card-body">
-                <form>
+                <form th:attr="action=@{/sendEmail}" method="POST" >
+                    <input type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"
+                    />
                     <div class="mb-3">
                         <label for="toIds"  class="form-label">To</label>
                         <input type="text" th:value="${toIds}" class="form-control" name="toIds" id="toIds">

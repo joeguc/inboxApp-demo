@@ -50,7 +50,7 @@ public class InboxController {
 
         //fetch messages
         if(!StringUtils.hasText(folder)){
-            folder = "InBox";
+            folder = "Inbox";
         }
         List<EmailList> emailList = emailListItemRepository
                 .findAllByKey_IdAndKey_Label(userId,folder);
