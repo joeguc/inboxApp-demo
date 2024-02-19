@@ -3,9 +3,7 @@ package io.javabrains.inbox.controllers;
 import com.datastax.oss.driver.api.core.uuid.Uuids;
 import io.javabrains.inbox.emaillist.EmailList;
 import io.javabrains.inbox.emaillist.EmailListItemRepository;
-import io.javabrains.inbox.folders.Folder;
-import io.javabrains.inbox.folders.FolderRepository;
-import io.javabrains.inbox.folders.FolderService;
+import io.javabrains.inbox.folders.*;
 import org.ocpsoft.prettytime.PrettyTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -26,9 +24,10 @@ public class InboxController {
     private FolderRepository folderRepository;
     @Autowired
     private FolderService folderService;
-
     @Autowired
     private EmailListItemRepository emailListItemRepository;
+    @Autowired
+    private UnreadEmailStatsRepository unreadEmailStatsRepository;
 
 
     @GetMapping(value = "/")
@@ -47,6 +46,9 @@ public class InboxController {
         model.addAttribute("userFolders", userFolders);
         List<Folder> defaultFolders = folderService.fetchDefaultFolders(userId);
         model.addAttribute("defaultFolders", defaultFolders);
+        List<UnreadEmailStats> stats = unreadEmailStatsRepository.findAllById(userId);
+        model.addAttribute("stats", stats);
+
 
         //fetch messages
         if(!StringUtils.hasText(folder)){

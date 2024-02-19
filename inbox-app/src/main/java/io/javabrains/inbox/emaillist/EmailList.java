@@ -33,7 +33,7 @@ public class EmailList {
     @Transient
     private String agoTimeString;
 
-    public EmailListItemKey getKey() {
+    public EmailListItemKey getKey(){
         return key;
     }
 
