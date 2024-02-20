@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Controller
 public class InboxController {
@@ -46,8 +47,7 @@ public class InboxController {
         model.addAttribute("userFolders", userFolders);
         List<Folder> defaultFolders = folderService.fetchDefaultFolders(userId);
         model.addAttribute("defaultFolders", defaultFolders);
-        List<UnreadEmailStats> stats = unreadEmailStatsRepository.findAllById(userId);
-        model.addAttribute("stats", stats);
+        model.addAttribute("stats", folderService.mapCountToLabels(userId));
 
 
         //fetch messages

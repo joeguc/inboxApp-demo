@@ -51,9 +51,9 @@ public class InboxApp {
 	}
 	@PostConstruct
 	public void init(){
-		folderRepository.save(new  Folder("joeguc" , "Inbox","BLUE"));
-		folderRepository.save(new  Folder("joeguc" , "Sent Items","Green"));
-		folderRepository.save(new  Folder("joeguc" , "Important","YELLOW"));
+		folderRepository.save(new  Folder("joeguc" , "Work","BLUE"));
+		folderRepository.save(new  Folder("joeguc" , "Home","Green"));
+		folderRepository.save(new  Folder("joeguc" , "Family","YELLOW"));
 
 		for(int i = 0 ; i<10 ;i++){
 
