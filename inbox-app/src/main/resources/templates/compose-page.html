@@ -20,6 +20,8 @@
     <style>
         .container {
              display: grid;
+             margin-top : 20px;
+
 
         grid-template-areas:
             "header header header"
@@ -63,11 +65,13 @@
 
 <div class="container">
     <header>
-        <h1>HELLO ,Tezzo</h1>
-        <p th:text="'The time now is:(CAI)'+${theDate}" class="funny"/>
+        <h3>
+            Inbox App
+            <small class="text-body-secondary">Welcome, </small>
+            <small class="text-body-secondary" th:text="${userName}">User Name</small>
+        </h3>
         <!-- Header content -->
     </header>
-
     <nav>
         <!-- Navigation -->
 

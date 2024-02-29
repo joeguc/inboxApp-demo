@@ -20,6 +20,7 @@
     <style>
         .container {
              display: grid;
+             margin-top : 20px;
 
         grid-template-areas:
             "header header header"
@@ -63,8 +64,12 @@
 
 <div class="container">
     <header>
-        <h1>HELLO ,tezzo</h1>
-        <p th:text="'The time now is:(CAI)'+${theDate}" class="funny"/>
+        <h3>
+            Inbox App
+            <small class="text-body-secondary">Welcome, </small>
+            <small class="text-body-secondary" th:text="${userName}">User Name</small>
+        </h3>
+
         <!-- Header content -->
     </header>
 
@@ -75,9 +80,6 @@
         </div>
         <div th:insert = "components/folder-list :: folder-list (panelName ='Folders',folders=${defaultFolders})"></div>
         <div th:insert = "components/folder-list :: folder-list (panelName ='User Folders',folders=${userFolders})"></div>
-
-        <p th:text="'The time now is:(CAI)'+${theDate}" class="funny"/>
-
 
     </nav>
 
@@ -105,10 +107,14 @@
 
     <aside>
         <!-- Sidebar / Ads -->
+        <small class="text-body-secondary" th:text="'The time now is:(CAI)'+${theDate}">the Date</small>
+
     </aside>
 
     <footer>
         <!-- Footer content -->
+
+
     </footer>
 </div>
 

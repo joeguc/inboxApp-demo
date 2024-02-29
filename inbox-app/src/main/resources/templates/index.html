@@ -7,14 +7,24 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width" />
     <base href="/" />
+    <style>
+      .space-bottom {
+        margin-bottom: 30px;
+      }
+      .heading-top {
+        margin-top: 80px;
+      }
+    </style>
   </head>
-  <body>
-    <h1>Login</h1>
-    <h1>INBOX</h1>
+  <body><main class="container text-center heading-top">
 
-    <div>
-      With GitHub: <a href="/oauth2/authorization/github">click here</a>
+    <h1 class="display-5 fw-bold">Inbox App </h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4 space-bottom">Stay in touch with your Github amigos outside Github </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center space-bottom">
+        <a type="button" href="/oauth2/authorization/github" class="btn btn-primary btn-lg px-4 gap-3">Login via GitHub</a>
+      </div>
     </div>
-  <h1>INBOX</h1>
+  </main>
   </body>
 </html>
